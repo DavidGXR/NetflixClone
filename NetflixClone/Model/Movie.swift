@@ -8,6 +8,9 @@
 import Foundation
 
 struct Movie {
-    var categoryTitle: String
-    var moviePoster: [String]
+    var video:String
+    var logo:String
+    var title:String
+    var description: String
+    var type:String
 }

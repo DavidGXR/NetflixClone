@@ -57,8 +57,8 @@ class RecommendationTableViewCell: UITableViewCell {
         netflixIcon.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 35).isActive = true
         netflixIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
       
-        airplayButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        airplayButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        airplayButton.heightAnchor.constraint(equalToConstant: 28).isActive = true
+        airplayButton.widthAnchor.constraint(equalToConstant: 28).isActive = true
         accountButton.heightAnchor.constraint(equalToConstant: 28).isActive = true
         accountButton.widthAnchor.constraint(equalToConstant: 28).isActive = true
         airplayButton.setImage(UIImage(systemName: "airplayvideo"), for: .normal)
@@ -66,8 +66,7 @@ class RecommendationTableViewCell: UITableViewCell {
         accountButton.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 35).isActive = true
         airplayButton.trailingAnchor.constraint(equalTo: accountButton.leadingAnchor, constant: -5).isActive = true
         airplayButton.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 35).isActive = true
-        let largeConfig = UIImage.SymbolConfiguration(scale: .large)
-        let airplayButtonIcon = UIImage(systemName: "airplayvideo", withConfiguration: largeConfig)
+        let airplayButtonIcon = UIImage(named: "airplay")
         airplayButton.setImage(airplayButtonIcon, for: .normal)
         airplayButton.tintColor = .white
         accountButton.setImage(UIImage(named: "cristiano"), for: .normal)
@@ -103,8 +102,8 @@ class RecommendationTableViewCell: UITableViewCell {
         bottomStackView.addArrangedSubview(playButton)
         bottomStackView.addArrangedSubview(infoButton)
         
-        let largePlusSign = UIImage.SymbolConfiguration(scale: .medium)
-        let plusSign = UIImage(systemName: "plus", withConfiguration: largePlusSign)
+        let largeSign = UIImage.SymbolConfiguration(scale: .large)
+        let plusSign = UIImage(systemName: "plus", withConfiguration: largeSign)
         mylistButton.setImage(plusSign, for: .normal)
         mylistButton.tintColor = .white
        
@@ -113,19 +112,17 @@ class RecommendationTableViewCell: UITableViewCell {
         mylistButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -50)
         mylistButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: -35, right: 0)
         
-        let largePlaySign = UIImage.SymbolConfiguration(scale: .large)
-        let playSign = UIImage(systemName: "play.rectangle.fill", withConfiguration: largePlaySign)
+        let playSign = UIImage(systemName: "play.rectangle.fill", withConfiguration: largeSign)
         playButton.setImage(playSign, for: .normal)
         playButton.tintColor = .white
         
-        let largeInfoSign = UIImage.SymbolConfiguration(scale: .medium)
-        let infoSign = UIImage(systemName: "info.circle", withConfiguration: largeInfoSign)
+        let infoSign = UIImage(systemName: "info.circle", withConfiguration: largeSign)
         infoButton.setImage(infoSign, for: .normal)
         infoButton.tintColor = .white
        
         infoButton.setTitle("Info", for: .normal)
         infoButton.titleLabel?.font = UIFont(name: "Helvetica", size: 10)
-        infoButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -37)
+        infoButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -40)
         infoButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: -35, right: 0)
         
 

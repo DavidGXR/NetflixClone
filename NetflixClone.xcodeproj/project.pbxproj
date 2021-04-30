@@ -12,6 +12,8 @@
 		703DF10026298B190098B9BC /* CommonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703DF0FF26298B190098B9BC /* CommonTableViewCell.swift */; };
 		703DF10326298DB00098B9BC /* CommonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703DF10226298DB00098B9BC /* CommonCollectionViewCell.swift */; };
 		703DF1062629AE100098B9BC /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703DF1052629AE100098B9BC /* Movie.swift */; };
+		704FA137263BF36600EDA0E4 /* londonhasfallen.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 704FA135263BF29C00EDA0E4 /* londonhasfallen.mp4 */; };
+		704FA139263BF36900EDA0E4 /* ff.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 704FA134263BF29300EDA0E4 /* ff.mp4 */; };
 		7053269B2626D1840083B969 /* ComingSoonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053269A2626D1840083B969 /* ComingSoonVC.swift */; };
 		7053269E2626D1960083B969 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053269D2626D1960083B969 /* SearchVC.swift */; };
 		705326A12626D1A10083B969 /* DownloadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705326A02626D1A10083B969 /* DownloadVC.swift */; };
@@ -29,6 +31,8 @@
 		703DF0FF26298B190098B9BC /* CommonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTableViewCell.swift; sourceTree = "<group>"; };
 		703DF10226298DB00098B9BC /* CommonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCollectionViewCell.swift; sourceTree = "<group>"; };
 		703DF1052629AE100098B9BC /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		704FA134263BF29300EDA0E4 /* ff.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = ff.mp4; path = ../../../../../../../../Downloads/ff.mp4; sourceTree = "<group>"; };
+		704FA135263BF29C00EDA0E4 /* londonhasfallen.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = londonhasfallen.mp4; path = ../../../../../../../../Downloads/londonhasfallen.mp4; sourceTree = "<group>"; };
 		7053269A2626D1840083B969 /* ComingSoonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonVC.swift; sourceTree = "<group>"; };
 		7053269D2626D1960083B969 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		705326A02626D1A10083B969 /* DownloadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadVC.swift; sourceTree = "<group>"; };
@@ -86,6 +90,23 @@
 			path = ComingSoon;
 			sourceTree = "<group>";
 		};
+		708BF2D426399E1500B96BED /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				708BF2D526399E1D00B96BED /* Video */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		708BF2D526399E1D00B96BED /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				704FA135263BF29C00EDA0E4 /* londonhasfallen.mp4 */,
+				704FA134263BF29300EDA0E4 /* ff.mp4 */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
 		70A4EE3726233154000F3B99 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +126,7 @@
 		70A4EE4226233154000F3B99 /* NetflixClone */ = {
 			isa = PBXGroup;
 			children = (
+				708BF2D426399E1500B96BED /* Resources */,
 				702018602636C064007C14D6 /* Utility */,
 				70A4EE5B2623317E000F3B99 /* Model */,
 				70A4EE5A26233179000F3B99 /* View */,
@@ -212,6 +234,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				704FA137263BF36600EDA0E4 /* londonhasfallen.mp4 in Resources */,
+				704FA139263BF36900EDA0E4 /* ff.mp4 in Resources */,
 				70A4EE5026233155000F3B99 /* LaunchScreen.storyboard in Resources */,
 				70A4EE4D26233155000F3B99 /* Assets.xcassets in Resources */,
 			);
@@ -377,6 +401,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NASTCCUVNL;
 				INFOPLIST_FILE = "NetflixClone/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -396,6 +421,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NASTCCUVNL;
 				INFOPLIST_FILE = "NetflixClone/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
