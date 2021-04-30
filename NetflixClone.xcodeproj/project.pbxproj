@@ -14,6 +14,7 @@
 		703DF1062629AE100098B9BC /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703DF1052629AE100098B9BC /* Movie.swift */; };
 		704FA137263BF36600EDA0E4 /* londonhasfallen.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 704FA135263BF29C00EDA0E4 /* londonhasfallen.mp4 */; };
 		704FA139263BF36900EDA0E4 /* ff.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 704FA134263BF29300EDA0E4 /* ff.mp4 */; };
+		704FA13E263C06C900EDA0E4 /* DownloadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FA13D263C06C900EDA0E4 /* DownloadTableViewCell.swift */; };
 		7053269B2626D1840083B969 /* ComingSoonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053269A2626D1840083B969 /* ComingSoonVC.swift */; };
 		7053269E2626D1960083B969 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053269D2626D1960083B969 /* SearchVC.swift */; };
 		705326A12626D1A10083B969 /* DownloadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705326A02626D1A10083B969 /* DownloadVC.swift */; };
@@ -33,6 +34,7 @@
 		703DF1052629AE100098B9BC /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		704FA134263BF29300EDA0E4 /* ff.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = ff.mp4; path = ../../../../../../../../Downloads/ff.mp4; sourceTree = "<group>"; };
 		704FA135263BF29C00EDA0E4 /* londonhasfallen.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = londonhasfallen.mp4; path = ../../../../../../../../Downloads/londonhasfallen.mp4; sourceTree = "<group>"; };
+		704FA13D263C06C900EDA0E4 /* DownloadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadTableViewCell.swift; sourceTree = "<group>"; };
 		7053269A2626D1840083B969 /* ComingSoonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonVC.swift; sourceTree = "<group>"; };
 		7053269D2626D1960083B969 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		705326A02626D1A10083B969 /* DownloadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadVC.swift; sourceTree = "<group>"; };
@@ -88,6 +90,14 @@
 				702018632636C241007C14D6 /* ComingSoonTableViewCell.swift */,
 			);
 			path = ComingSoon;
+			sourceTree = "<group>";
+		};
+		704FA13C263C06BA00EDA0E4 /* Download */ = {
+			isa = PBXGroup;
+			children = (
+				704FA13D263C06C900EDA0E4 /* DownloadTableViewCell.swift */,
+			);
+			path = Download;
 			sourceTree = "<group>";
 		};
 		708BF2D426399E1500B96BED /* Resources */ = {
@@ -161,6 +171,7 @@
 		70A4EE5A26233179000F3B99 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				704FA13C263C06BA00EDA0E4 /* Download */,
 				702018622636C22F007C14D6 /* ComingSoon */,
 				7020185E2636B730007C14D6 /* Search */,
 				7020185D2636B71F007C14D6 /* Home */,
@@ -249,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				703DF10026298B190098B9BC /* CommonTableViewCell.swift in Sources */,
+				704FA13E263C06C900EDA0E4 /* DownloadTableViewCell.swift in Sources */,
 				70A4EE6326233688000F3B99 /* HomeVC.swift in Sources */,
 				7053269E2626D1960083B969 /* SearchVC.swift in Sources */,
 				702018642636C241007C14D6 /* ComingSoonTableViewCell.swift in Sources */,
