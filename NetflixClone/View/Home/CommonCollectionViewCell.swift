@@ -21,7 +21,6 @@ class CommonCollectionViewCell: UICollectionViewCell {
         movieImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
         movieImage.clipsToBounds = true
         movieImage.layer.cornerRadius = 4
-        movieImage.layer.borderWidth = 1
     }
     
     required init?(coder: NSCoder) {

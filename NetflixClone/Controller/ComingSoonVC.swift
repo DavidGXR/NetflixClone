@@ -13,8 +13,7 @@ class ComingSoonVC: UIViewController, AVPlayerViewControllerDelegate {
 
     private var tableView:UITableView!
     private var comingSoonBarItem = UIBarButtonItem()
-    private var airplayButtonBarItem:UIBarButtonItem!
-    private var profilePictureBarItem:UIBarButtonItem!
+    private var rightBarItem:UIBarButtonItem!
     private var player:AVPlayer!
     
     private let movieData = [Movie(video: "londonhasfallen", logo: "londonhasfallen",title: "London has Fallen", description: "Mike, a Secret Service agent, must find a way to escape with his team when Barkawi, a terrorist, attacks all the world leaders attending the funeral of the British Prime Minister, James Wilson.", type: "Arcade"),
@@ -32,8 +31,9 @@ class ComingSoonVC: UIViewController, AVPlayerViewControllerDelegate {
         self.view.addSubview(tableView)
         
         // Navigation Bar
-        let airplayButton       = UIButton()
+        let airplayButton         = UIButton()
         let profilePictureButton  = UIButton()
+        let rightItemStackView    = UIStackView()
                 
         airplayButton.translatesAutoresizingMaskIntoConstraints = false
         profilePictureButton.translatesAutoresizingMaskIntoConstraints = false
@@ -42,12 +42,16 @@ class ComingSoonVC: UIViewController, AVPlayerViewControllerDelegate {
         profilePictureButton.widthAnchor.constraint(equalToConstant: 28).isActive = true
         profilePictureButton.heightAnchor.constraint(equalToConstant: 28).isActive = true
         
-        let airplayButtonIcon = UIImage(named: "airplay")
-        airplayButton.setImage(airplayButtonIcon, for: .normal)
+        airplayButton.setImage(UIImage(named: "airplay"), for: .normal)
         profilePictureButton.setImage(UIImage(named: "cristiano"), for: .normal)
         
-        airplayButtonBarItem = UIBarButtonItem(customView: airplayButton)
-        profilePictureBarItem = UIBarButtonItem(customView: profilePictureButton)
+        rightItemStackView.axis = .horizontal
+        rightItemStackView.distribution = .fillEqually
+        rightItemStackView.spacing = 35
+        rightItemStackView.addArrangedSubview(airplayButton)
+        rightItemStackView.addArrangedSubview(profilePictureButton)
+        
+        rightBarItem = UIBarButtonItem(customView: rightItemStackView)
         
         comingSoonBarItem.title = "Coming Soon"
         comingSoonBarItem.tintColor = .white
@@ -55,7 +59,7 @@ class ComingSoonVC: UIViewController, AVPlayerViewControllerDelegate {
         comingSoonBarItem.setTitleTextAttributes(strAttribute, for: .normal)
         
         self.navigationItem.leftBarButtonItem   = comingSoonBarItem
-        self.navigationItem.rightBarButtonItems = [profilePictureBarItem, airplayButtonBarItem]
+        self.navigationItem.rightBarButtonItem  = rightBarItem
         
         // TableView
         tableView.dataSource = self

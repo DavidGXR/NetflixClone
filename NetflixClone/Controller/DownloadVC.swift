@@ -11,8 +11,7 @@ class DownloadVC: UIViewController {
 
     private var tableView:UITableView!
     private var myDownloadBarItem = UIBarButtonItem()
-    private var airplayButtonBarItem:UIBarButtonItem!
-    private var profilePictureBarItem:UIBarButtonItem!
+    private var rightBarItem:UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +24,9 @@ class DownloadVC: UIViewController {
         self.view.addSubview(tableView)
         
         // Navigation Bar
-        let airplayButton       = UIButton()
+        let airplayButton         = UIButton()
         let profilePictureButton  = UIButton()
+        let rightItemStackView    = UIStackView()
                 
         airplayButton.translatesAutoresizingMaskIntoConstraints = false
         profilePictureButton.translatesAutoresizingMaskIntoConstraints = false
@@ -35,12 +35,16 @@ class DownloadVC: UIViewController {
         profilePictureButton.widthAnchor.constraint(equalToConstant: 28).isActive = true
         profilePictureButton.heightAnchor.constraint(equalToConstant: 28).isActive = true
         
-        let airplayButtonIcon = UIImage(named: "airplay")
-        airplayButton.setImage(airplayButtonIcon, for: .normal)
+        airplayButton.setImage(UIImage(named: "airplay"), for: .normal)
         profilePictureButton.setImage(UIImage(named: "cristiano"), for: .normal)
         
-        airplayButtonBarItem = UIBarButtonItem(customView: airplayButton)
-        profilePictureBarItem = UIBarButtonItem(customView: profilePictureButton)
+        rightItemStackView.axis = .horizontal
+        rightItemStackView.distribution = .fillEqually
+        rightItemStackView.spacing = 35
+        rightItemStackView.addArrangedSubview(airplayButton)
+        rightItemStackView.addArrangedSubview(profilePictureButton)
+        
+        rightBarItem = UIBarButtonItem(customView: rightItemStackView)
         
         myDownloadBarItem.title = "My Downloads"
         myDownloadBarItem.tintColor = .white
@@ -48,7 +52,7 @@ class DownloadVC: UIViewController {
         myDownloadBarItem.setTitleTextAttributes(strAttribute, for: .normal)
         
         self.navigationItem.leftBarButtonItem   = myDownloadBarItem
-        self.navigationItem.rightBarButtonItems = [profilePictureBarItem, airplayButtonBarItem]
+        self.navigationItem.rightBarButtonItem  = rightBarItem
         
         // TableView
         tableView.dataSource = self

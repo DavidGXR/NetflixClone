@@ -50,33 +50,13 @@ class RecommendationTableViewCell: UITableViewCell {
         backgroundImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0).isActive    = true
         backgroundImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive        = true
         backgroundImage.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive              = true
-                        
-        netflixIcon.setImage(UIImage(named: "netflix_icon"), for: .normal)
-        netflixIcon.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        netflixIcon.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        netflixIcon.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 35).isActive = true
-        netflixIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
-      
-        airplayButton.heightAnchor.constraint(equalToConstant: 28).isActive = true
-        airplayButton.widthAnchor.constraint(equalToConstant: 28).isActive = true
-        accountButton.heightAnchor.constraint(equalToConstant: 28).isActive = true
-        accountButton.widthAnchor.constraint(equalToConstant: 28).isActive = true
-        airplayButton.setImage(UIImage(systemName: "airplayvideo"), for: .normal)
-        accountButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
-        accountButton.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 35).isActive = true
-        airplayButton.trailingAnchor.constraint(equalTo: accountButton.leadingAnchor, constant: -5).isActive = true
-        airplayButton.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 35).isActive = true
-        let airplayButtonIcon = UIImage(named: "airplay")
-        airplayButton.setImage(airplayButtonIcon, for: .normal)
-        airplayButton.tintColor = .white
-        accountButton.setImage(UIImage(named: "cristiano"), for: .normal)
-        
+
         topStackView.axis = .horizontal
         topStackView.alignment = .fill
         topStackView.distribution = .fillEqually
         topStackView.spacing = 0
 
-        topStackView.topAnchor.constraint(equalTo: netflixIcon.bottomAnchor, constant: 10).isActive = true
+        topStackView.topAnchor.constraint(equalTo: topAnchor, constant: 100).isActive = true
         topStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
         topStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
         topStackView.addArrangedSubview(tvshowButton)
@@ -86,9 +66,12 @@ class RecommendationTableViewCell: UITableViewCell {
         tvshowButton.setTitle("TV Shows", for: .normal)
         movieButton.setTitle("Movies", for: .normal)
         categoriesButton.setTitle("Categories", for: .normal)
-        tvshowButton.titleLabel?.font = UIFont(name: "Helvetica", size: 13)
-        movieButton.titleLabel?.font = UIFont(name: "Helvetica", size: 13)
-        categoriesButton.titleLabel?.font = UIFont(name: "Helvetica", size: 13)
+        tvshowButton.titleLabel?.font = UIFont(name: "Helvetica", size: 14)
+        movieButton.titleLabel?.font = UIFont(name: "Helvetica", size: 14)
+        categoriesButton.titleLabel?.font = UIFont(name: "Helvetica", size: 14)
+        
+        tvshowButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 0)
+        categoriesButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 30)
         
         bottomStackView.axis = .horizontal
         bottomStackView.alignment = .fill
@@ -96,37 +79,46 @@ class RecommendationTableViewCell: UITableViewCell {
         bottomStackView.spacing = 0
 
         bottomStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -30).isActive = true
-        bottomStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
-        bottomStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
+        bottomStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
+        bottomStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
         bottomStackView.addArrangedSubview(mylistButton)
         bottomStackView.addArrangedSubview(playButton)
         bottomStackView.addArrangedSubview(infoButton)
+        
+        mylistButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        infoButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        playButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        playButton.layer.cornerRadius = 3
         
         let largeSign = UIImage.SymbolConfiguration(scale: .large)
         let plusSign = UIImage(systemName: "plus", withConfiguration: largeSign)
         mylistButton.setImage(plusSign, for: .normal)
         mylistButton.tintColor = .white
-       
-        mylistButton.setTitle("My List", for: .normal)
-        mylistButton.titleLabel?.font = UIFont(name: "Helvetica", size: 10)
-        mylistButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -50)
-        mylistButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: -35, right: 0)
+        //mylistButton.backgroundColor = .red
         
-        let playSign = UIImage(systemName: "play.rectangle.fill", withConfiguration: largeSign)
+        mylistButton.setTitle("My List", for: .normal)
+        mylistButton.titleLabel?.font = UIFont(name: "Helvetica-Bold", size: 12)
+        mylistButton.imageEdgeInsets = UIEdgeInsets(top: -10, left: 20, bottom: 0, right: 0)
+        mylistButton.titleEdgeInsets = UIEdgeInsets(top: 5, left: 0, bottom: -22, right: 30)
+        
+        let playSign = UIImage(systemName: "play.fill", withConfiguration: largeSign)
         playButton.setImage(playSign, for: .normal)
-        playButton.tintColor = .white
+        playButton.imageView?.tintColor = .black
+        playButton.backgroundColor = .white
+        playButton.setTitle("Play", for: .normal)
+        playButton.setTitleColor(.black, for: .normal)
+        playButton.titleLabel?.font = UIFont(name: "Helvetica-Bold", size: 16)
+        playButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -25, bottom: 0, right: 0)
         
         let infoSign = UIImage(systemName: "info.circle", withConfiguration: largeSign)
         infoButton.setImage(infoSign, for: .normal)
         infoButton.tintColor = .white
+        //infoButton.backgroundColor = .red
        
         infoButton.setTitle("Info", for: .normal)
-        infoButton.titleLabel?.font = UIFont(name: "Helvetica", size: 10)
-        infoButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -40)
-        infoButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: -35, right: 0)
-        
-
-        
+        infoButton.titleLabel?.font = UIFont(name: "Helvetica-Bold", size: 12)
+        infoButton.imageEdgeInsets = UIEdgeInsets(top: -10, left: 0, bottom: 0, right: -44)
+        infoButton.titleEdgeInsets = UIEdgeInsets(top: 5, left: 0, bottom: -22, right: 0)
     }
     
     
