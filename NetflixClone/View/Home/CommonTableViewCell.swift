@@ -15,11 +15,17 @@ class CommonTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        self.backgroundColor = .black
         setupViews()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
     }
     
     private func setupViews() {
@@ -28,7 +34,7 @@ class CommonTableViewCell: UITableViewCell {
         layout.minimumLineSpacing = 5
         layout.minimumInteritemSpacing = 5
         movieCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        movieCollectionView.register(CommonCollectionViewCell.self, forCellWithReuseIdentifier: "movieCell")
+        movieCollectionView.register(CommonCollectionViewCell.self, forCellWithReuseIdentifier: C.homeCollectionViewCell)
         
         movieCollectionView.allowsSelection = true
         movieCollectionView.isScrollEnabled = true

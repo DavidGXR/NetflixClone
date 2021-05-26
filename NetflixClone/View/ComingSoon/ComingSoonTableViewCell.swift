@@ -14,22 +14,46 @@ class ComingSoonTableViewCell: UITableViewCell {
     var videoView = UIView()
     let avpController = AVPlayerViewController()
     let movieLogo = UIImageView()
-    let remindMeButton = UIButton()
-    let infoButton = UIButton()
+    private let remindMeButton:UIButton = {
+        let button = UIButton()
+        let mediumSizeIconConfig = UIImage.SymbolConfiguration(scale: .medium)
+        let bellSign = UIImage(systemName: "bell", withConfiguration: mediumSizeIconConfig)
+        button.setImage(bellSign, for: .normal)
+        button.tintColor = .white
+        button.setTitle("Remind Me", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Helvetica", size: 10)
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -70)
+        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: -35, right: 0)
+        return button
+    }()
+    
+    private let infoButton:UIButton = {
+        let button = UIButton()
+        let mediumSizeIconConfig = UIImage.SymbolConfiguration(scale: .medium)
+        let infoSign = UIImage(systemName: "info.circle", withConfiguration: mediumSizeIconConfig)
+        button.setImage(infoSign, for: .normal)
+        button.tintColor = .white
+        button.setTitle("Info", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Helvetica", size: 10)
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -38)
+        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: -35, right: 0)
+        return button
+    }()
     let movieTitle = UILabel()
     let movieDescripton = UILabel()
     let movieType = UILabel()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupView()
+        
+        setupLayout()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupView() {
+    private func setupLayout() {
         self.contentView.backgroundColor = .black
         let views = [videoView, movieLogo, remindMeButton, infoButton, movieTitle, movieDescripton, movieType]
         for i in 0...views.count-1 {
@@ -55,28 +79,13 @@ class ComingSoonTableViewCell: UITableViewCell {
         movieLogo.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15).isActive = true
         movieLogo.bottomAnchor.constraint(equalTo: movieTitle.topAnchor, constant: -10).isActive = true
         
-        let largePlusSign = UIImage.SymbolConfiguration(scale: .medium)
-        let bellSign = UIImage(systemName: "bell", withConfiguration: largePlusSign)
-        remindMeButton.setImage(bellSign, for: .normal)
-        remindMeButton.tintColor = .white
         remindMeButton.topAnchor.constraint(equalTo: videoView.bottomAnchor, constant: 15).isActive = true
         remindMeButton.trailingAnchor.constraint(equalTo: infoButton.leadingAnchor, constant: 0).isActive = true
-        remindMeButton.setTitle("Remind Me", for: .normal)
-        remindMeButton.titleLabel?.font = UIFont(name: "Helvetica", size: 10)
-        remindMeButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -70)
-        remindMeButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: -35, right: 0)
         
-        let infoSign = UIImage(systemName: "info.circle", withConfiguration: largePlusSign)
-        infoButton.setImage(infoSign, for: .normal)
-        infoButton.tintColor = .white
         infoButton.topAnchor.constraint(equalTo: videoView.bottomAnchor, constant: 15).isActive = true
         infoButton.leadingAnchor.constraint(equalTo: remindMeButton.trailingAnchor, constant: 0).isActive = true
         infoButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25).isActive = true
-        infoButton.setTitle("Info", for: .normal)
-        infoButton.titleLabel?.font = UIFont(name: "Helvetica", size: 10)
-        infoButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -38)
-        infoButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: -35, right: 0)
-        
+
         movieTitle.textColor = .white
         movieTitle.font = UIFont(name: "Helvetica-Bold", size: 13)
         movieTitle.topAnchor.constraint(equalTo: movieLogo.bottomAnchor, constant: 10).isActive = true
